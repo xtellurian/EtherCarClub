@@ -1,9 +1,9 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.4;
 
 contract Club {
     address owner;
-
-    mapping(string => uint) latestRecordIds; // holds the number of tx for specific vin
+    string[] public members; // dynamic array of fixed size VIN, each 17 chars
+    mapping(string => bool) memberMap;
 
     function Club() public {
         owner = msg.sender;
@@ -11,20 +11,22 @@ contract Club {
 
     event Joined(
         string _vin,
-        uint _id,
         string _hash,
         uint256 _timestamp,
         uint256 _eventTime
     );
 
     function joinClub(string _vin, string _recordHash, uint256 _timestamp) public {
-        Joined(_vin, nextIdForVin(_vin), _recordHash, _timestamp, now);
+        var vinBytes = bytes(_vin);
+        if (vinBytes.length != 17 ) 
+            revert();
+        
+        memberMap[_vin] = true;
+        members.push(_vin);
+        Joined(_vin, _recordHash, _timestamp, now);
     }
 
-
-    function nextIdForVin(string _vin) private returns(uint) {
-        var idToReturn = latestRecordIds[_vin];
-        latestRecordIds[_vin] = latestRecordIds[_vin] + 1;
-        return idToReturn;
+    function isMember(string _vin) public view returns(bool) { 
+        return memberMap[_vin]; 
     }
 }

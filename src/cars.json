@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "picture": "images/scottish-terrier.jpeg",
+    "picture": "images/jeep.jpg",
     "year": 2011,
     "make": "Jeep",
     "model": "Grand Cherokee",
@@ -9,7 +9,7 @@
   },
   {
     "id": 1,
-    "picture": "images/scottish-terrier.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2005,
     "make": "Volkswagen",
     "model": "Golf",
@@ -17,7 +17,7 @@
   },
   {
     "id": 2,
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2015,
     "make": "Hyundai",
     "model": "i30",
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "picture": "images/boxer.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2012,
     "make": "Mazda",
     "model": "3",
@@ -33,7 +33,7 @@
   },
   {
     "id": 4,
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2016,
     "make": "Holden",
     "model": "Barina",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2013,
     "make": "Suzuki",
     "model": "Baleno",
@@ -49,7 +49,7 @@
   },
   {
     "id": 6,
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/jeep.jpg",
     "year": 2011,
     "make": "Toyota",
     "model": "Yaris",
@@ -57,7 +57,7 @@
   },
   {
     "id": 7,
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/jeep.jpg",
     "year": 2009,
     "make": "Toyota",
     "model": "Prius",
@@ -65,7 +65,7 @@
   },
   {
     "id": 8,
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2004,
     "make": "BMW",
     "model": "118i E87",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "picture": "images/boxer.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2013,
     "make": "Ford",
     "model": "Falcon",
@@ -81,7 +81,7 @@
   },
   {
     "id": 10,
-    "picture": "images/boxer.jpeg",
+    "picture": "images/jeep.jpg",
     "year": 2003,
     "make": "Toyota",
     "model": "Landcruiser",
@@ -89,7 +89,7 @@
   },
   {
     "id": 11,
-    "picture": "images/scottish-terrier.jpeg",
+    "picture": "images/jeep.jpg",
     "year": 2011,
     "make": "Kia",
     "model": "Grand Carnival",
@@ -97,7 +97,7 @@
   },
   {
     "id": 12,
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2009,
     "make": "Mazda",
     "model": "CX-7",
@@ -105,7 +105,7 @@
   },
   {
     "id": 13,
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/mazda3.jpg",
     "year": 2015,
     "make": "Volkswagen",
     "model": "Tiguan",
@@ -113,7 +113,7 @@
   },
   {
     "id": 14,
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/modelt.jpg",
     "year": 1926,
     "make": "Packard",
     "model": "4th Series",
@@ -121,7 +121,7 @@
   },
   {
     "id": 15,
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/modelt.jpg",
     "year": 1921,
     "make": "Ford",
     "model": "Model T",
