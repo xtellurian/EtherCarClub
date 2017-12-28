@@ -2,27 +2,6 @@ App = {
   web3Provider: null,
   contracts: {},
 
-  old_init: function () {
-    // Load pets.
-    $.getJSON('../pets.json', function (data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
-
-      for (i = 0; i < data.length; i++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-        petsRow.append(petTemplate.html());
-      }
-    });
-
-    return App.initWeb3();
-  },
-
   init: function () {
     // Load cars.
     $.getJSON('../cars.json', function (data) {
@@ -36,7 +15,7 @@ App = {
         carTemplate.find('.car-model').text(data[i].model);
         carTemplate.find('.car-year').text(data[i].year);
         carTemplate.find('.btn-join').attr('data-id', data[i].vin);
-
+        carTemplate.find('.panel-car').attr('id', data[i].vin);
         carsRow.append(carTemplate.html());
       }
     });
@@ -66,16 +45,40 @@ App = {
       // Set the provider for our contract
       App.contracts.Club.setProvider(App.web3Provider);
 
+      App.bindContractEvents();
+
       // Use our contract to retrieve and mark the cars in the club
       //return App.markAdopted();
       return App.markClubMembers();
     });
 
-    return App.bindEvents();
+    return App.bindPageEvents();
   },
 
-  bindEvents: function () {
+  bindPageEvents: function () {
     $(document).on('click', '.btn-join', App.handleJoin);
+  },
+
+  bindContractEvents: function () {
+    var clubInstance;
+    
+    App.contracts.Club.deployed().then(function(instance) {
+      clubInstance = instance;
+      // events + MetaMask don't always play nice together - there aren't any events showing up
+      var myEvent = clubInstance.Joined({fromBlock:0, toBlock: 'latest'});
+      myEvent.get(function(error, logs) {
+        if(!error){
+          // handle past logs
+          console.log(logs);
+        }
+      });
+      myEvent.watch(function(error, result){
+        if(!error){
+          // handle realtime events
+          console.log(result);
+        }
+      });
+    });
   },
 
   markClubMembers: function (members, account) {
@@ -85,18 +88,16 @@ App = {
       clubInstance = instance;
 
       $.getJSON('../cars.json', function (data) {
-        for (i = 0; i < data.length; i++) {
-          let vin = data[i].vin;
-          let j = i; // closure
-          clubInstance.isMember.call(vin).then( function (isMember){
+
+        data.forEach(function(item, i) {
+          clubInstance.isMember.call(item.vin).then( function (isMember){
             if(isMember){
-              $('.panel-car').eq(j).find('button').text('Success').attr('disabled', true);
+              let thing = $( '#' + item.vin);
+              $('#' + item.vin).find('button').text('Success').attr('disabled', true);
             }
-          });
-        }
+          }); // end async contract callback
+        });
       });
-    
-      //return clubInstance.getMembers.call();
     }).catch(function(err) {
       console.log(err.message);
     });
