@@ -1,0 +1,15 @@
+{
+      "config": {
+          "homesteadBlock": 0,
+          "eip155Block": 0,
+          "eip158Block": 0,
+          "eip150Block": 0
+      },
+      "difficulty": "0x20000",
+      "gasLimit": "0x493E00",
+      "alloc": {
+          "2036278cb2de0d1dceb69fd99e1b9cdb92c8b28c": {
+          "balance": "1000000000000000000000000" 
+          }
+      }
+  }
