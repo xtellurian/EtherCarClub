@@ -5,18 +5,17 @@ A toy DApp. Add your cars to a club.
 
 ### Requirements
 
-* Truffle dev tools
-* Ganache
-* MetaMask Browser Plugin
+* NodeJS [Install with nvm](https://github.com/creationix/nvm)
+* [Truffle](https://github.com/trufflesuite/truffle)
+* [Ganache](http://truffleframework.com/ganache/)
+* [MetaMask](https://metamask.io/) Browser Plugin
 
 ### Run the DApp
 
 * Start Ganache
 * `truffle migrate`
 * `npm run dev`
-* Open `localhost:3000` in a browser in Chrome with MetaMask extension.
-
-
+* Open `localhost:3000` in a browser in Browser with MetaMask extension.
 
 
 ## Setting up a test environment w/ geth
