@@ -10,6 +10,10 @@ A toy DApp. Add your cars to a club.
 * [Ganache](http://truffleframework.com/ganache/)
 * [MetaMask](https://metamask.io/) Browser Plugin
 
+### Install Dependencies
+
+* `npm install`
+
 ### Run the DApp
 
 * Start Ganache
